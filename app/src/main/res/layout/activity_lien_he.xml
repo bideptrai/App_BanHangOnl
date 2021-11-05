@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <androidx.appcompat.widget.Toolbar
+        android:background="#8C8C8C"
+        app:titleTextColor="#9A0505"
+        app:title="Liên hệ"
+        android:id="@+id/toolbarlienhe"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:id="@+id/txtlienhe"
+        android:text="Số điện thoại : 012345\nGmail : abc@gmail.com \nĐịa chỉ shop :"
+        android:textColor="#000000"
+        android:textSize="20dp" />
+
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/mapfragment_mapfragmentdemo"
+        class="com.huawei.hms.maps.MapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        map:cameraTargetLat="19.956988"
+        map:cameraTargetLng="105.857590"
+        map:cameraZoom="10" />
+
+</LinearLayout>
