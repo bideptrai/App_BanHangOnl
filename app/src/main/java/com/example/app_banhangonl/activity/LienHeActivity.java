@@ -19,10 +19,7 @@ import com.example.app_banhangonl.R;
 import com.huawei.hms.maps.HuaweiMap;
 import com.huawei.hms.maps.MapFragment;
 import com.huawei.hms.maps.OnMapReadyCallback;
-import com.huawei.hms.maps.model.BitmapDescriptorFactory;
-import com.huawei.hms.maps.model.LatLng;
 import com.huawei.hms.maps.model.Marker;
-import com.huawei.hms.maps.model.MarkerOptions;
 
 public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallback {
     Toolbar toolbar;
@@ -53,7 +50,7 @@ public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallb
             }
         }
 
-       if (null != mMarker) {
+      /* if (null != mMarker) {
             mMarker.remove();
         }
         MarkerOptions options = new MarkerOptions()
@@ -62,7 +59,7 @@ public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallb
                 .snippet("This is a snippet!")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.iconvt));
 
-        mMarker = hMap.addMarker(options);
+        mMarker = hMap.addMarker(options);*/
 
     }
 
