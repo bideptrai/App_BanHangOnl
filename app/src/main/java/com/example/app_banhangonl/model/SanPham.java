@@ -1,6 +1,8 @@
 package com.example.app_banhangonl.model;
 
-public class SanPham {
+import java.io.Serializable;
+
+public class SanPham implements Serializable {
     public int ID;
     public String Ten_SP;
     public int Gia_SP;

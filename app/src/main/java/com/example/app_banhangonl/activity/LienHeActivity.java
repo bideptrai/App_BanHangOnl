@@ -19,13 +19,16 @@ import com.example.app_banhangonl.R;
 import com.huawei.hms.maps.HuaweiMap;
 import com.huawei.hms.maps.MapFragment;
 import com.huawei.hms.maps.OnMapReadyCallback;
+import com.huawei.hms.maps.model.BitmapDescriptorFactory;
+import com.huawei.hms.maps.model.LatLng;
 import com.huawei.hms.maps.model.Marker;
+import com.huawei.hms.maps.model.MarkerOptions;
 
 public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallback {
     Toolbar toolbar;
     TextView textView;
     HuaweiMap hMap;
-    Marker mMarker;
+    private Marker mMarker;
 
 
     @Override
@@ -49,8 +52,10 @@ public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallb
                 ActivityCompat.requestPermissions(this, strings, 1);
             }
         }
+    }
 
-      /* if (null != mMarker) {
+    public void AddMaker() {
+        if (null != mMarker) {
             mMarker.remove();
         }
         MarkerOptions options = new MarkerOptions()
@@ -59,8 +64,7 @@ public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallb
                 .snippet("This is a snippet!")
                 .icon(BitmapDescriptorFactory.fromResource(R.drawable.iconvt));
 
-        mMarker = hMap.addMarker(options);*/
-
+        mMarker = hMap.addMarker(options);
     }
 
     @RequiresPermission(allOf = {Manifest.permission.ACCESS_WIFI_STATE,
@@ -68,12 +72,19 @@ public class LienHeActivity extends AppCompatActivity implements OnMapReadyCallb
     @Override
     public void onMapReady(HuaweiMap map){
         Log.d(TAG, "onMapReady: ");
-        HuaweiMap hMap = map;
         // Enable the my-location layer.
-        hMap.setMyLocationEnabled(true);
+        map.setMyLocationEnabled(true);
         // Enable the my-location icon. 
-        hMap.getUiSettings().setMyLocationButtonEnabled(true);
-        hMap.setPadding(20 ,40,50,60);
+        map.getUiSettings().setMyLocationButtonEnabled(true);
+        if (null != mMarker) {
+            mMarker.remove();
+        }
+        MarkerOptions options = new MarkerOptions()
+                .position(new LatLng(19.956988, 105.857590))
+                .title("Cửa hàng bán thiết bị điện tử")
+                ;
+
+        mMarker = map.addMarker(options);
     }
     private void ActionToolBar() {
 

@@ -2,6 +2,8 @@ package com.example.app_banhangonl.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -10,6 +12,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.ViewFlipper;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -25,6 +28,7 @@ import com.android.volley.toolbox.Volley;
 import com.example.app_banhangonl.R;
 import com.example.app_banhangonl.adapter.LoaiSpAdapter;
 import com.example.app_banhangonl.adapter.SanPhamAdapter;
+import com.example.app_banhangonl.model.GioHang;
 import com.example.app_banhangonl.model.LoaiSp;
 import com.example.app_banhangonl.model.SanPham;
 import com.example.app_banhangonl.ultil.CheckConnection;
@@ -60,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<SanPham> mangsp;
     SanPhamAdapter sanPhamAdapter;
 
+    public static ArrayList<GioHang> mangGiohang;
 
     
 
@@ -80,6 +85,22 @@ public class MainActivity extends AppCompatActivity {
             finish();
         }
 }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.giohang,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.menugiohang:
+                Intent intent = new Intent(getApplicationContext(),Giohang.class);
+                startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     private void CatchOnItemListView() {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
@@ -264,5 +285,10 @@ public class MainActivity extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new GridLayoutManager(getApplicationContext(),2));
         recyclerView.setAdapter(sanPhamAdapter);
+        if (mangGiohang != null) {
+
+        }else   {
+            mangGiohang = new ArrayList<>();
+        }
     }
     }

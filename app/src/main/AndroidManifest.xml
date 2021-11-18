@@ -3,15 +3,14 @@
     package="com.example.app_banhangonl">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="com.huawei.appmarket.service.commondata.permission.GET_COMMON_DATA" />
-    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
 
     <application
-
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -19,6 +18,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.App_BanHangOnl"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".activity.ThongTinKH"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Giohang"
+            android:exported="false" />
+        <activity
+            android:name=".activity.Chitietsanpham"
+            android:exported="false" />
         <activity
             android:name=".activity.ThongTinActivity"
             android:exported="true" />
